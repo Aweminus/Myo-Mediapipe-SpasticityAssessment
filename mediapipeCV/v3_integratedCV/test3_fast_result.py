@@ -11,6 +11,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from webcam_open import *
+from webcam_mediapipe import *
+from webcam_mediapipe_right import *
 import global_var
 import sys
 
@@ -82,6 +84,10 @@ class Ui_fast_result_3(object):
         self.webcam_apply_mediapipe.ImageUpdate.connect(self.ImageUpdateSlot)
 
 
+        #### Change Task ID to END - Stop Myo Recording####
+        webcam_apply_mediapipe_right().change_TaskID('Myo_End')
+        webcam_apply_mediapipe().change_TaskID('Myo_End')   
+        
         #初始化一个定时器
         self.timer=QTimer()
         self.timer.start(global_var.get_value('res_time'))

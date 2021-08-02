@@ -13,6 +13,8 @@ import global_var
 import statistics
 import os
 import csv
+import matplotlib.pyplot as plt
+from scipy.signal import find_peaks
 
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
@@ -39,7 +41,7 @@ class webcam_apply_mediapipe(QThread):
     def change_TaskID(self,taskID):
         global TaskID
         TaskID = taskID
-        print("changed taskID to: " + TaskID)    
+        print("changed taskID to: " + TaskID)        
         
     def run(self):
 
